@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <style>
+        :root {
+            color-scheme: light dark;
+            background: light-dark(#fff, #000);
+            font-family: ui-monospace, monospace;
+            font-size: clamp(0.875rem, 0.7125rem + 0.8125vw, 1.6875rem);
+        }
+
+        .scramble>* {
+            position: absolute;
+        }
+
+        html, body { overflow: hidden; }
+    </style>
+</head>
+
+<body>
+    <div class="scramble">
+        <div>
+            <video autoplay loop muted playsinline>
+                <source src="/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="/ip">ip</a>
+    </div>
+    <script>
+        scrambles = document.querySelectorAll('.scramble > *')
+
+        scrambles.forEach(el => {
+            el.style.left = (Math.random() * (window.innerWidth - el.offsetWidth)) + 'px'
+            el.style.top = (Math.random() * (window.innerHeight - el.offsetHeight)) + 'px'
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <style>
+        :root {
+            color-scheme: light dark;
+            background: light-dark(#fff, #000);
+            font-family: ui-monospace, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <p>IPv4: <span id="v4">…</span></p>
+    <p>IPv6: <span id="v6">…</span></p>
+    <p>UA: <span id="ua"></span></p>
+
+    <script>
+        const get = (el, url) => fetch(url)
+            .then(r => r.text())
+            .then(t => el.textContent = t, () => el.textContent = "none");
+        get(v4, "https://v4.zzzzzz.ing");
+        get(v6, "https://v6.zzzzzz.ing");
+        ua.textContent = navigator.userAgent;
+    </script>
+</body>
+
+</html>
