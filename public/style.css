@@ -1,0 +1,22 @@
+:root {
+    color-scheme: light dark;
+    background: light-dark(#ffffff, #000000);
+    font-family: ui-monospace, monospace;
+    font-size: clamp(0.875rem, 0.7125rem + 0.8125vw, 1.6875rem);
+
+    html, body {
+        overflow: hidden;
+    }
+
+    /* index.html specific */
+    .scramble > * {
+        position: absolute;
+    }
+
+    @media (max-width: 600px) {
+        .scramble video {
+            width: 75vw;
+            height: auto;
+        }
+    }
+}
