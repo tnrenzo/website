@@ -1,7 +1,8 @@
 services:
   web:
     build: .
-    container_name: tiny-web
+    container_name: website
     restart: unless-stopped
+    env_file: .env
     ports:
       - "127.0.0.1:8280:8080"
