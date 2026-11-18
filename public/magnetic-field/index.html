@@ -12,7 +12,8 @@
 <body>
     <canvas id="canvas"></canvas>
 
-    <script src="/magnetic-field/script.js"></script>
+    <script>var Module = { canvas: document.getElementById('canvas') };</script>
+    <script src="/magnetic-field/magnetic-field.js" defer></script>
 </body>
 
 </html>
