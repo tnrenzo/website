@@ -4,3 +4,4 @@
 Dockerfile
 compose.yaml
 *.md
+Makefile
